@@ -41,7 +41,12 @@ $(function() {
 
 	function go() {
 		time_parameter = get_time_parameter();
-		update_addressbar(time_parameter);
+
+		// There's a better way but this is fine.
+		if(time_parameter != "?t=00h00m00s" && time_parameter != "?t=00m00s") {
+			console.log("TP: " + time_parameter)
+			update_addressbar(time_parameter);
+		}
 
 		setTimeout(go, interval);
 	}
