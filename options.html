@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Test Extension Options</title>
+	</head>
+	
+	<body>
+		Update addressbar:
+		<select id="interval">
+			<option value="1second">Every second</option>
+			<option value="10seconds">Every 10 seconds</option>
+			<option value="30seconds">Every 30 seconds</option>
+			<option value="1minute">Every minute</option>
+			<option value="5minutes">Every 5 minutes</option>
+		</select>
+		<br>
+		<label>
+			<input type="checkbox" id="delete_history">
+			Delete history (old timestamps)
+		</label>
+
+		<div id="status"></div>
+
+		<br>
+
+		<button id="save">Save</button>
+
+		<script src="options.js"></script>
+	</body>
+</html>
