@@ -7,11 +7,12 @@ function save_options() {
 		"delete_history": delete_history
 	}, function() {
 		var status = document.getElementById("status");
-		status.textContent = "Saved successfully!";
+		status.textContent = "Saved successfully! You may need to reload twitch tabs for this change to take effect.";
+		status.style.color = "green";
 
 		setTimeout(function() {
 			status.textContent = '';
-		}, 1000);
+		}, 5000);
 	});
 }
 

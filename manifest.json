@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Twitch VOD Addressbar Sync",
-    "description": "Syncs the twitch.tv addressbar with the video timestamp on VODs.",
+    "description": "Syncs the twitch.tv addressbar with the video timestamp on VODs in the HTML5 player.",
     "version": "0.1",
     "icons": {
     	"16": "Bandage-26.png",
@@ -9,7 +9,8 @@
     },
     "page_action": {
     	"default_icon": "Bandage-26.png",
-	    "default_title": "Twitch VOD Addressbar Sync"
+	    "default_title": "Twitch VOD Addressbar Sync",
+        "default_popup": "options.html"
     },
 
     "background": {

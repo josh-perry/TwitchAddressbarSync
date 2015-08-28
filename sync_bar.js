@@ -39,9 +39,15 @@ $(function() {
 		}
 	});
 
-	setInterval(function() {
+	function go() {
 		time_parameter = get_time_parameter();
 		update_addressbar(time_parameter);
+
+		setTimeout(go, interval);
+	}
+
+	setTimeout(function() {
+		go();
 	}, interval);
 
 	function update_addressbar(title) {
