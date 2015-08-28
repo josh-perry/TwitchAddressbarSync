@@ -3,8 +3,8 @@ function save_options() {
 	var delete_history = document.getElementById("delete_history").checked;
 
 	chrome.storage.sync.set({
-		interval: interval,
-		delete_history: delete_history
+		"interval": interval,
+		"delete_history": delete_history
 	}, function() {
 		var status = document.getElementById("status");
 		status.textContent = "Saved successfully!";

@@ -1,22 +1,25 @@
+var delete_history = false;
+var interval = 1000;
+
 $(function() {
 	var dl = document.location;
 	var base_url = dl.protocol + "//" + dl.host + dl.pathname;
 	var previous_url = null;
 
-	var delete_history = false;
-	var interval = 2000;
-
 	chrome.storage.sync.get("delete_history", function(items) {
 		if (!chrome.runtime.error) {
-			delete_history = items.data;
-		} else {
-			console.log("ERROR");
+			delete_history = items["delete_history"];
+			console.log("SHOULD DELETE HISTORY? " + delete_history)
 		}
 	});
 
+	console.log("DELETE HISTORY? " + delete_history)
+
 	chrome.storage.sync.get("interval", function(items) {
 		if (!chrome.runtime.error) {
-			var data = items.data;
+			var data = items["interval"];
+
+			console.log(data);
 			
 			if(data == "1second") {
 				interval = 1000;
@@ -33,8 +36,6 @@ $(function() {
 			else {
 				interval = (1000 * 60) * 5;
 			}
-		} else {
-			console.log("ERROR");
 		}
 	});
 
@@ -52,7 +53,6 @@ $(function() {
 			}
 
 			if(previous_url) {
-				console.log(previous_url);
 				chrome.runtime.sendMessage({do_thing: "delete", url: previous_url});
 			}
 
